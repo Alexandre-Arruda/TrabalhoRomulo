@@ -1,0 +1,222 @@
+/* --- CONFIGURAÇÕES GERAIS --- */
+:root {
+    --cor-primaria: #0d6efd; /* Azul Bootstrap */
+    --cor-sucesso: #198754; /* Verde */
+    --cor-perigo: #dc3545;  /* Vermelho */
+    --cor-fundo: #f8f9fa;
+    --cor-texto: #212529;
+    --cor-borda: #dee2e6;
+    --sombra-card: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+/* Centraliza o conteúdo principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: var(--cor-borda);
+    margin: 40px 0;
+}
+
+/* --- ESTILOS DE BOTÕES E INPUTS --- */
+button {
+    background-color: var(--cor-primaria);
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+    background-color: #0b5ed7; /* Azul mais escuro */
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+input[type="number"] {
+    width: 60px;
+    padding: 8px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 6px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+/* --- CATÁLOGO DE PRODUTOS --- */
+.catalogo {
+    display: grid;
+    /* Grid responsivo: 
+      Cria colunas com no mínimo 280px. 
+      'auto-fill' preenche o espaço com quantas colunas couberem.
+      '1fr' faz com que elas se estiquem para ocupar todo o espaço.
+    */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+/* --- CARD INDIVIDUAL DO PRODUTO --- */
+.produto-card {
+    background: #ffffff;
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    box-shadow: var(--sombra-card);
+    overflow: hidden; /* Para o 'border-radius' funcionar na imagem */
+    
+    /* Usamos Flexbox para organizar o card verticalmente */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.produto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.produto-card img {
+    width: 100%;
+    height: 200px; /* Altura fixa para todas as imagens */
+    object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+/* Container para o texto e o preço */
+.produto-info {
+    padding: 20px;
+    /* Faz essa div crescer para empurrar o formulário para baixo */
+    flex-grow: 1; 
+}
+
+.produto-card h3 {
+    font-size: 1.3rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.produto-card p {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--cor-sucesso);
+    margin: 0 0 10px 0;
+}
+
+/* Formulário de adicionar ao carrinho */
+.produto-card form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 20px 20px 20px; /* Padding apenas no formulário */
+}
+
+.produto-card form label {
+    font-weight: 500;
+}
+
+.produto-card form button {
+    /* O botão cresce para ocupar o espaço restante */
+    flex-grow: 1;
+}
+
+/* --- SEÇÃO DO CARRINHO --- */
+.carrinho {
+    background: #ffffff;
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: var(--sombra-card);
+}
+
+.carrinho h2 {
+    margin-top: 0;
+    border-bottom: 2px solid var(--cor-primaria);
+    padding-bottom: 10px;
+}
+
+.carrinho ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.carrinho li {
+    display: flex;
+    flex-wrap: wrap; /* Permite quebrar linha em telas pequenas */
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.carrinho li:last-child {
+    border-bottom: none;
+}
+
+/* Nome e preço do item no carrinho */
+.carrinho-item-info {
+    flex-grow: 1;
+    font-size: 1.1rem;
+    min-width: 150px; /* Evita que o texto seja espremido */
+    margin-right: 15px;
+}
+
+/* Container para os botões de ação no carrinho */
+.carrinho-acoes {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Estiliza os formulários de dentro do carrinho */
+.carrinho .form-atualizar,
+.carrinho .form-remover {
+    display: inline-flex; /* Alinha o formulário */
+    align-items: center;
+    gap: 8px;
+}
+
+.carrinho .form-atualizar button {
+    background-color: var(--cor-sucesso);
+}
+.carrinho .form-atualizar button:hover {
+    background-color: #157347;
+}
+
+.carrinho .form-remover button {
+    background-color: var(--cor-perigo);
+}
+.carrinho .form-remover button:hover {
+    background-color: #bb2d3b;
+}
+
+.carrinho h3 { /* Preço total */
+    text-align: right;
+    font-size: 1.6rem;
+    color: #333;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 2px solid var(--cor-borda);
+}
