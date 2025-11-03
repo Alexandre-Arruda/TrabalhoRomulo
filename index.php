@@ -57,7 +57,7 @@ if (!empty($_SESSION['carrinho'])) {
                         
                         <div class="flex gap-1">
                             <a href="produto.php?id=<?php echo $produto['id']; ?>" class="btn btn-outlined" style="flex: 1;">
-                                Ver Detalhes
+                                Detalhes
                             </a>
                             
                             <form action="carrinho_acoes.php" method="POST" style="flex: 1;">
