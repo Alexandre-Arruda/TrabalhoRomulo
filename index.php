@@ -27,7 +27,7 @@ if (!empty($_SESSION['carrinho'])) {
     <!-- HEADER -->
     <header class="header">
         <div class="header-content">
-            <a href="index.php" class="logo">🛒 Tech Store</a>
+            <a href="index.php" class="logo"> Tech Store</a>
             <nav class="nav-links">
                 <a href="index.php">Catálogo</a>
                 <a href="carrinho.php">
