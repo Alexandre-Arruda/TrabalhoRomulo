@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['finalizar'])) {
 
     <header class="header">
         <div class="header-content">
-            <a href="index.php" class="logo">🛒 Tech Store</a>
+            <a href="index.php" class="logo"> Tech Store</a>
             <nav class="nav-links">
                 <a href="index.php">Catálogo</a>
                 <a href="carrinho.php">Carrinho</a>

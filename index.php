@@ -1,5 +1,4 @@
 <?php
-session_start();
 require 'db_conexao.php';
 
 // Busca produtos
@@ -74,6 +73,9 @@ if (!empty($_SESSION['carrinho'])) {
             <?php endforeach; ?>
         </div>
     </div>
+
+</div>
+<?php require 'footer.php'; ?>
 
 </body>
 </html>
