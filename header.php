@@ -3,8 +3,7 @@
 // HEADER.PHP - CABEÇALHO PROFISSIONAL
 // ============================================
 
-// Inicia a sessão (necessário para login e carrinho)
-session_start();
+
 
 // Conecta ao banco de dados
 require_once 'db_conexao.php';
@@ -45,7 +44,7 @@ if ($nome_usuario) {
             
             <!-- LOGO -->
             <a href="index.php" class="logo">
-                <span class="logo-icon">🎮</span>
+
                 <span class="logo-text">Tech Store</span>
             </a>
 

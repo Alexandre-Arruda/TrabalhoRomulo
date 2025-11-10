@@ -34,72 +34,7 @@ for ($i = 1; $i <= 12; $i++) {
     $parcelamento[$i] = $valor_parcela;
 }
 ?>
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo htmlspecialchars($produto['nome']); ?> - Tech Store</title>
-    <link rel="stylesheet" href="css/material.css">
-    <style>
-        .produto-detail-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 32px;
-            margin-bottom: 32px;
-        }
-        .produto-main-image {
-            width: 100%;
-            border-radius: 4px;
-            box-shadow: var(--shadow-2);
-        }
-        .produto-thumbnails {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 8px;
-            margin-top: 16px;
-        }
-        .thumbnail {
-            width: 100%;
-            height: 80px;
-            object-fit: cover;
-            border-radius: 4px;
-            cursor: pointer;
-            border: 2px solid transparent;
-        }
-        .thumbnail:hover {
-            border-color: var(--primary);
-        }
-        .preco-destaque {
-            font-size: 36px;
-            font-weight: 500;
-            color: var(--primary);
-            margin: 16px 0;
-        }
-        @media (max-width: 768px) {
-            .produto-detail-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <header class="header">
-        <div class="header-content">
-            <a href="index.php" class="logo">🛒 Tech Store</a>
-            <nav class="nav-links">
-                <a href="index.php">Catálogo</a>
-                <a href="carrinho.php">
-                    Carrinho
-                    <?php if ($total_itens > 0): ?>
-                        <span class="badge"><?php echo $total_itens; ?></span>
-                    <?php endif; ?>
-                </a>
-            </nav>
-        </div>
-    </header>
-
+<?php require 'header.php'; ?>
     <div class="container">
         <!-- BREADCRUMB -->
         <div class="breadcrumb">

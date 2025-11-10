@@ -18,7 +18,7 @@
         <div class="card-content">
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;">
                 <div>
-                    <div style="font-size: 48px; margin-bottom: 16px;">🎮</div>
+
                     <h2 style="font-size: 32px; margin-bottom: 16px;">Nossa História</h2>
                     <p style="line-height: 1.8; color: var(--text-secondary); margin-bottom: 16px;">
                         Fundada em 2024, a <strong style="color: var(--primary);">Tech Store</strong> nasceu da paixão 

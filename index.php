@@ -13,31 +13,8 @@ if (!empty($_SESSION['carrinho'])) {
     }
 }
 ?>
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo - Tech Store</title>
-    <link rel="stylesheet" href="css/material.css">
-</head>
-<body>
+<?php require 'header.php'; ?>
 
-    <!-- HEADER -->
-    <header class="header">
-        <div class="header-content">
-            <a href="index.php" class="logo"> Tech Store</a>
-            <nav class="nav-links">
-                <a href="index.php">Catálogo</a>
-                <a href="carrinho.php">
-                    Carrinho
-                    <?php if ($total_itens > 0): ?>
-                        <span class="badge"><?php echo $total_itens; ?></span>
-                    <?php endif; ?>
-                </a>
-            </nav>
-        </div>
-    </header>
 
     <!-- CONTEÚDO -->
     <div class="container">
