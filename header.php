@@ -5,8 +5,9 @@
 // Este arquivo é incluído no topo de TODAS as páginas
 // Ele contém: sessão, conexão BD, cabeçalho HTML e menu de navegação
 
-
-
+// INICIA A SESSÃO
+// Deve ser a PRIMEIRA coisa no script para funcionar corretamente em todas as páginas.
+session_start();
 // CONECTA AO BANCO DE DADOS
 // O arquivo db_conexao.php cria a variável $pdo que usamos para consultas SQL
 require_once 'db_conexao.php';

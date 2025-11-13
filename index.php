@@ -1,9 +1,12 @@
 <?php
+// A sessão será iniciada pelo header.php, mas a lógica precisa vir antes.
 require 'db_conexao.php';
 
 // Busca produtos
 $stmt = $pdo->query("SELECT * FROM produtos WHERE estoque > 0 ORDER BY nome ASC");
 $produtos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
+<?php require 'header.php'; 
 
 // Conta itens no carrinho
 $total_itens = 0;
@@ -13,7 +16,6 @@ if (!empty($_SESSION['carrinho'])) {
     }
 }
 ?>
-<?php require 'header.php'; ?>
 
 
     <!-- CONTEÚDO -->

@@ -4,16 +4,16 @@
 // ============================================
 // Esta página permite o usuário entrar no sistema
 
-// INCLUI O CABEÇALHO
-// O header.php já faz session_start() e require do db_conexao.php
-require 'header.php';
+// INICIA A SESSÃO E CONEXÃO COM O BANCO
+// session_start() precisa vir antes de qualquer HTML
+require 'db_conexao.php';
 
 // ============================================
 // REDIRECIONA SE JÁ ESTIVER LOGADO
 // ============================================
 // Se o usuário já fez login, não precisa ver a página de login
 if (isset($_SESSION['usuario_id'])) {
-    // header: redireciona para outra página
+    // header: redireciona para a página inicial
     header('Location: index.php');
     // exit: para a execução do código (importante após redirect)
     exit;
@@ -108,6 +108,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
+<?php
+// ============================================
+// AGORA QUE A LÓGICA TERMINOU, INCLUI O HTML
+// ============================================
+require 'header.php'; ?>
 
 <!-- ============================================ -->
 <!-- HTML DA PÁGINA -->

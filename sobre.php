@@ -6,7 +6,8 @@
 // Mostra missão, visão, valores e diferenciais
 
 // INCLUI O CABEÇALHO
-require 'header.php';
+// Inclui o arquivo de cabeçalho, que contém elementos comuns a todas as páginas.
+require_once 'header.php';
 ?>
 
 <!-- ============================================ -->
@@ -14,6 +15,7 @@ require 'header.php';
 <!-- ============================================ -->
 
 <div class="container">
+
     
     <!-- ======================================== -->
     <!-- BREADCRUMB (NAVEGAÇÃO) -->
@@ -24,6 +26,7 @@ require 'header.php';
         <span>Sobre Nós</span>
     </div>
 
+
     <!-- ======================================== -->
     <!-- CABEÇALHO DA PÁGINA -->
     <!-- ======================================== -->
@@ -32,6 +35,7 @@ require 'header.php';
         <p>Conheça nossa história e nossos valores</p>
     </div>
 
+
     <!-- ======================================== -->
     <!-- SEÇÃO: NOSSA HISTÓRIA -->
     <!-- ======================================== -->
@@ -39,6 +43,7 @@ require 'header.php';
         <div class="card-content">
             
             <!-- GRID: 2 COLUNAS -->
+
             <!-- Esquerda: texto / Direita: destaque visual -->
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;">
                 
@@ -76,6 +81,7 @@ require 'header.php';
         </div>
     </div>
 
+
     <!-- ======================================== -->
     <!-- SEÇÃO: MISSÃO, VISÃO E VALORES -->
     <!-- ======================================== -->
@@ -83,6 +89,7 @@ require 'header.php';
     <div class="grid grid-3" style="margin-bottom: 32px;">
         
         <!-- CARD 1: MISSÃO -->
+
         <div class="card">
             <div class="card-content" style="text-align: center;">
                 
@@ -101,6 +108,7 @@ require 'header.php';
         </div>
 
         <!-- CARD 2: VISÃO -->
+
         <div class="card">
             <div class="card-content" style="text-align: center;">
                 
@@ -119,6 +127,7 @@ require 'header.php';
         </div>
 
         <!-- CARD 3: VALORES -->
+
         <div class="card">
             <div class="card-content" style="text-align: center;">
                 
@@ -137,6 +146,7 @@ require 'header.php';
         </div>
     </div>
 
+
     <!-- ======================================== -->
     <!-- SEÇÃO: POR QUE ESCOLHER -->
     <!-- ======================================== -->
@@ -144,6 +154,7 @@ require 'header.php';
         <div class="card-content">
             
             <h2 style="font-size: 32px; margin-bottom: 32px; text-align: center;">
+
                 Por Que Escolher a Tech Store?
             </h2>
             
@@ -151,6 +162,7 @@ require 'header.php';
             <div class="grid grid-2" style="gap: 24px;">
                 
                 <!-- DIFERENCIAL 1 -->
+
                 <div style="display: flex; gap: 20px;">
                     <!-- Ícone em quadrado colorido -->
                     <div style="flex-shrink: 0; width: 56px; height: 56px; background: linear-gradient(135deg, var(--primary-light), var(--primary)); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px;">
@@ -165,6 +177,7 @@ require 'header.php';
                 </div>
 
                 <!-- DIFERENCIAL 2 -->
+
                 <div style="display: flex; gap: 20px;">
                     <div style="flex-shrink: 0; width: 56px; height: 56px; background: linear-gradient(135deg, var(--success), #388e3c); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px;">
                         💰
@@ -178,6 +191,7 @@ require 'header.php';
                 </div>
 
                 <!-- DIFERENCIAL 3 -->
+
                 <div style="display: flex; gap: 20px;">
                     <div style="flex-shrink: 0; width: 56px; height: 56px; background: linear-gradient(135deg, var(--warning), #f57c00); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px;">
                         🚀
@@ -191,6 +205,7 @@ require 'header.php';
                 </div>
 
                 <!-- DIFERENCIAL 4 -->
+
                 <div style="display: flex; gap: 20px;">
                     <div style="flex-shrink: 0; width: 56px; height: 56px; background: linear-gradient(135deg, var(--info), #1565c0); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px;">
                         🎧
@@ -204,6 +219,7 @@ require 'header.php';
                 </div>
 
                 <!-- DIFERENCIAL 5 -->
+
                 <div style="display: flex; gap: 20px;">
                     <div style="flex-shrink: 0; width: 56px; height: 56px; background: linear-gradient(135deg, var(--secondary), #c51162); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px;">
                         🛡️
@@ -217,6 +233,7 @@ require 'header.php';
                 </div>
 
                 <!-- DIFERENCIAL 6 -->
+
                 <div style="display: flex; gap: 20px;">
                     <div style="flex-shrink: 0; width: 56px; height: 56px; background: linear-gradient(135deg, #9c27b0, #7b1fa2); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px;">
                         💳
@@ -232,6 +249,7 @@ require 'header.php';
         </div>
     </div>
 
+
     <!-- ======================================== -->
     <!-- SEÇÃO: CALL TO ACTION -->
     <!-- ======================================== -->
@@ -239,6 +257,7 @@ require 'header.php';
     <div class="card" style="background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; text-align: center;">
         <div class="card-content" style="padding: 64px 32px;">
             
+
             <h2 style="font-size: 36px; margin-bottom: 16px; color: white;">
                 Pronto para começar?
             </h2>
@@ -248,6 +267,7 @@ require 'header.php';
             </p>
             
             <!-- BOTÕES DE AÇÃO -->
+
             <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
                 
                 <!-- BOTÃO: VER PRODUTOS -->
@@ -264,6 +284,7 @@ require 'header.php';
     </div>
 
 </div>
+
 
 <?php
 // INCLUI O RODAPÉ

@@ -1,16 +1,27 @@
 <?php
+// Inclui o arquivo de cabeçalho, que contém elementos comuns a todas as páginas.
 require 'header.php';
 
+// Inicializa as variáveis para armazenar mensagens de feedback e dados do formulário.
 $mensagem = '';
 $tipo_mensagem = '';
+// Array para guardar os dados do formulário e preencher os campos em caso de erro.
 $form_data = ['nome' => '', 'email' => '', 'telefone' => ''];
 
+// Verifica se o formulário foi submetido através do método POST.
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Coleta e sanitiza os dados do formulário, removendo espaços extras e caracteres HTML especiais.
     $nome = trim(htmlspecialchars($_POST['nome']));
     $email = trim(htmlspecialchars($_POST['email']));
+    // As senhas não são sanitizadas aqui, pois serão tratadas de forma diferente.
     $senha = $_POST['senha'];
     $confirma_senha = $_POST['confirma_senha'];
     $telefone = trim(htmlspecialchars($_POST['telefone']));
+
+    // ============================================
+    // VALIDAÇÃO
+    // ============================================
+    // Sequência de verificações para garantir que os dados são válidos.
 
     // Salva dados do formulário
     $form_data = ['nome' => $nome, 'email' => $email, 'telefone' => $telefone];
@@ -21,16 +32,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $mensagem = 'Por favor, digite um email válido.';
         $tipo_mensagem = 'error';
+    // Verifica se as senhas coincidem.
     } elseif ($senha !== $confirma_senha) {
         $mensagem = 'As senhas não coincidem. Digite a mesma senha nos dois campos.';
         $tipo_mensagem = 'error';
+    // Verifica se a senha tem pelo menos 6 caracteres.
     } elseif (strlen($senha) < 6) {
         $mensagem = 'A senha deve ter no mínimo 6 caracteres.';
         $tipo_mensagem = 'error';
     } else {
+        // ============================================
+        // VERIFICA SE EMAIL JÁ EXISTE
+        // ============================================
+        // Prepara uma consulta para verificar se o email já está cadastrado.
         $stmt = $pdo->prepare("SELECT id FROM usuarios WHERE email = ?");
+        // Executa a consulta, passando o email como parâmetro.
         $stmt->execute([$email]);
         
+        // Se encontrar um usuário com o mesmo email...
         if ($stmt->fetch()) {
             $mensagem = 'Este email já está cadastrado. Tente fazer login.';
             $tipo_mensagem = 'error';

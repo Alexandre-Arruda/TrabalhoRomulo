@@ -6,10 +6,12 @@
 // Mostra informações de contato e formulário
 
 // INCLUI O CABEÇALHO
+// Inclui o arquivo de cabeçalho, que contém elementos comuns a todas as páginas.
 require 'header.php';
 
 // ============================================
 // VARIÁVEL DE CONTROLE DO FORMULÁRIO
+
 // ============================================
 // Indica se a mensagem foi enviada (neste exemplo é simulado)
 $mensagem_enviada = false;
@@ -194,6 +196,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <!-- ================================ -->
         <!-- COLUNA 1: FORMULÁRIO DE CONTATO -->
         <!-- ================================ -->
+
         <div class="card">
             <div class="card-content">
                 
@@ -275,6 +278,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <!-- ================================ -->
         <!-- COLUNA 2: MAPA E REDES SOCIAIS -->
         <!-- ================================ -->
+
         <div>
             
             <!-- MAPA (PLACEHOLDER) -->
@@ -356,6 +360,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <!-- ======================================== -->
     <!-- SEÇÃO 3: FAQ (PERGUNTAS FREQUENTES) -->
     <!-- ======================================== -->
+
     <div class="card">
         <div class="card-content">
             
