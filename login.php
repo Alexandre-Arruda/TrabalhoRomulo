@@ -4,9 +4,11 @@
 // ============================================
 // Esta página permite o usuário entrar no sistema
 
-// INICIA A SESSÃO E CONEXÃO COM O BANCO
-// session_start() precisa vir antes de qualquer HTML
-require 'db_conexao.php';
+// INICIA A SESSÃO
+// session_start() precisa vir antes de qualquer saída HTML e antes de usar $_SESSION
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 
 // ============================================
 // REDIRECIONA SE JÁ ESTIVER LOGADO
@@ -18,6 +20,9 @@ if (isset($_SESSION['usuario_id'])) {
     // exit: para a execução do código (importante após redirect)
     exit;
 }
+
+// CONEXÃO COM O BANCO
+require_once 'db_conexao.php';
 
 // ============================================
 // VARIÁVEIS PARA MENSAGENS

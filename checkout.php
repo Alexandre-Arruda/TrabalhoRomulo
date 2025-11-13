@@ -1,4 +1,8 @@
 <?php
+// INICIA A SESSÃO
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 // Inclui o arquivo de conexão com o banco de dados para poder realizar consultas.
 require 'db_conexao.php';
 
@@ -21,24 +25,36 @@ foreach ($_SESSION['carrinho'] as $item) {
 
 // Processa o pedido quando o formulário é enviado.
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['finalizar'])) {
-    // *** Aqui você salvaria os dados do pedido no banco de dados ***
-    //
-    // 1. Coletar os dados do formulário (nome, email, endereço, etc.)
-    // 2. Inserir os dados na tabela de pedidos
-    // 3. Para cada item no carrinho, inserir na tabela de itens do pedido
-    // 4. Limpar o carrinho após o pedido ser finalizado
-    //
-    // Por enquanto, o código apenas simula a finalização do pedido,
-    // definindo variáveis de sessão e redirecionando para a página de confirmação.
+    // --- SIMULAÇÃO DE SALVAMENTO NO BANCO DE DADOS ---
+    // 1. Coleta os dados do formulário.
+    $dados_cliente = [
+        'nome' => $_POST['nome'],
+        'email' => $_POST['email'],
+        'telefone' => $_POST['telefone'],
+        'cpf' => $_POST['cpf'],
+        'cep' => $_POST['cep'],
+        'rua' => $_POST['rua'],
+        'numero' => $_POST['numero'],
+        'complemento' => $_POST['complemento'],
+        'bairro' => $_POST['bairro'],
+        'cidade' => $_POST['cidade'],
+        'estado' => $_POST['estado'],
+    ];
     
-    // Define a variável de sessão para indicar que o pedido foi finalizado.
-    $_SESSION['pedido_finalizado'] = true;
-    // Gera um número de pedido aleatório (simulação).
-    $_SESSION['numero_pedido'] = rand(10000, 99999);
-    // Limpa o carrinho removendo todos os itens.
+    // 2. Monta o objeto do pedido para salvar na sessão.
+    $_SESSION['pedido_finalizado'] = [
+        'numero_pedido' => rand(10000, 99999),
+        'cliente' => $dados_cliente,
+        'itens' => $_SESSION['carrinho'],
+        'total' => $total_carrinho,
+        'data' => date('d/m/Y H:i:s')
+    ];
+
+    // 3. Limpa o carrinho após "salvar" o pedido.
     $_SESSION['carrinho'] = [];
     
-    header('Location: pedido_confirmado.php');
+    // 4. Redireciona para a página de confirmação correta.
+    header('Location: pedido_confirmacao.php');
     exit;
 }
 ?>
