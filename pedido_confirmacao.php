@@ -1,12 +1,25 @@
 <?php
+// Inicia a sessão para poder acessar as variáveis globais $_SESSION
 session_start();
 
+// --- VERIFICAÇÃO DE SEGURANÇA ---
+// Verifica se a variável 'pedido_finalizado' NÃO existe na sessão.
+// Isso impede que alguém acesse essa página digitando a URL diretamente 
+// sem ter passado pelo processo de checkout.
 if (!isset($_SESSION['pedido_finalizado'])) {
+    // Se não existe, redireciona o usuário de volta para a página inicial.
     header('Location: index.php');
-    exit;
+    exit; // Encerra o script para garantir que o resto da página não carregue.
 }
 
+// Recupera o número do pedido que foi salvo na sessão durante o checkout
 $numero_pedido = $_SESSION['numero_pedido'];
+
+// --- LIMPEZA DA SESSÃO ---
+// Remove a confirmação da sessão.
+// Isso é crucial! Se o usuário atualizar a página (F5), o código de segurança acima
+// vai rodar, ver que essa variável não existe mais, e redirecionar para a home.
+// Isso evita que o pedido seja processado duas vezes ou que a página fique acessível para sempre.
 unset($_SESSION['pedido_finalizado']);
 ?>
 <!DOCTYPE html>
@@ -31,6 +44,7 @@ unset($_SESSION['pedido_finalizado']);
     <div class="container">
         <div class="card" style="max-width: 600px; margin: 64px auto;">
             <div class="card-content text-center" style="padding: 48px;">
+                
                 <div style="font-size: 80px; color: var(--success); margin-bottom: 24px;">
                     ✓
                 </div>

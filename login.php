@@ -191,21 +191,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
         </form>
 
-        <!-- ======================================== -->
-        <!-- DICA PARA TESTE (REMOVER EM PRODUÇÃO) -->
-        <!-- ======================================== -->
-        <div class="alert alert-info" style="margin-top: 24px;">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"/>
-                <line x1="12" y1="16" x2="12" y2="12"/>
-                <line x1="12" y1="8" x2="12.01" y2="8"/>
-            </svg>
-            <div>
-                <strong>Para testar o sistema:</strong><br>
-                Email: teste@email.com<br>
-                Senha: 123456
-            </div>
-        </div>
     </div>
 </div>
 

@@ -13,7 +13,7 @@ if (!empty($_SESSION['carrinho'])) {
 }
 ?>
 <?php require 'header.php'; ?>
-
+    </header>
 
     <div class="container">
         <div class="breadcrumb">
@@ -28,7 +28,7 @@ if (!empty($_SESSION['carrinho'])) {
             
             <div class="card">
                 <div class="card-content text-center" style="padding: 64px;">
-                    <div style="font-size: 64px; margin-bottom: 16px;"></div>
+                    <div style="font-size: 64px; margin-bottom: 16px;">🛒</div>
                     <h2 class="mb-2">Seu carrinho está vazio</h2>
                     <p class="text-secondary mb-3">Adicione produtos para começar suas compras!</p>
                     <a href="index.php" class="btn btn-primary">Ver Produtos</a>

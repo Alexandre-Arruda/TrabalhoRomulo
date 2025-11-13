@@ -35,6 +35,7 @@ for ($i = 1; $i <= 12; $i++) {
 }
 ?>
 <?php require 'header.php'; ?>
+
     <div class="container">
         <!-- BREADCRUMB -->
         <div class="breadcrumb">
