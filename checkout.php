@@ -1,4 +1,5 @@
 <?php
+
 // INICIA A SESSÃO
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
@@ -58,28 +59,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['finalizar'])) {
     exit;
 }
 ?>
-<!DOCTYPE html>
-
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout - Tech Store</title>
-    <link rel="stylesheet" href="css/material.css">
-</head>
-<body>
-
-
-    <header class="header">
-        <div class="header-content">
-            <a href="index.php" class="logo"> Tech Store</a>
-            <nav class="nav-links">
-                <a href="index.php">Catálogo</a>
-                <a href="carrinho.php">Carrinho</a>
-            </nav>
-        </div>
-    </header>
-
+<?php
+// Inclui o cabeçalho padrão do site, que já contém o menu, a conexão com o banco e o início da sessão.
+require 'header.php';
+?>
 
     <div class="container">
         <div class="breadcrumb">
@@ -398,6 +381,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['finalizar'])) {
         }
     </script>
 
-
-</body>
-</html>
+<?php
+// Inclui o rodapé padrão do site.
+require 'footer.php';
+?>

@@ -1,5 +1,9 @@
 <?php
-// Inclui o arquivo de conexão com o banco de dados para poder realizar consultas.
+// INICIA A SESSÃO
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+// Inclui o arquivo de conexão com o banco de dados.
 require 'db_conexao.php';
 
 // Inicializa as variáveis para armazenar o total do carrinho e a quantidade de itens.
